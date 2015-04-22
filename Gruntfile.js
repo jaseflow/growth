@@ -6,8 +6,11 @@ module.exports = function(grunt) {
 
         stylus: {
             compile: {
+                options: {
+                    "include css": true
+                },
                 files: {
-                    'public/css/app.css': 'source/styles/app.styl'
+                    'public/css/app.css': 'styles/app.styl'
                 }
             }
         },
@@ -24,6 +27,30 @@ module.exports = function(grunt) {
             }
         },
 
+        uglify: {
+            options: {
+                mangle: false
+            },
+            client: {
+                files: {
+                    'public/js/client.js': ['scripts/*.js']
+                }
+            }
+        },
+
+        jade: {
+            compile: {
+                options: {
+                    data: function(dest, src){
+                        return require('./models/db.json');
+                    }
+                },
+                files: {
+                    'public/index.html': ['templates/*.jade']
+                }
+            }
+        },
+
         autoprefixer: {
             options: {},
             no_dest: {
@@ -32,19 +59,27 @@ module.exports = function(grunt) {
         },
 
         watch: {
-           stylus: {
-               files: ['source/styles/app.styl'],
-               tasks: ['stylus']
-           },
-           livereload: {
-               options: {
-                   livereload: true
-               },
-               files: [
-                   'public/css/app.css',
-                   'public/index.html'
-               ]
-           }
+            uglify: {
+                files: ['scripts/*.js'],
+                tasks: ['uglify']
+            },
+            stylus: {
+                files: ['styles/app.styl'],
+                tasks: ['stylus']
+            },
+            jade: {
+                files: ['templates/**/*.jade'],
+                tasks: ['jade']
+            },
+            livereload: {
+                options: {
+                    livereload: true
+                },
+                files: [
+                    'public/css/*.css',
+                    'public/*.html'
+                ]
+            }
         }
 
     });
@@ -55,6 +90,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-stylus'); 
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-jade');
 
     // Register tasks
     grunt.registerTask('default', ['stylus','autoprefixer']);
