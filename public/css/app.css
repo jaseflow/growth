@@ -48,4 +48,31 @@ table {
 }
 
 
-body{background:#1d3047;color:#fff;font-family:Oxygen,sans-serif}h1,h2,h3,h4{font-weight:700}h1{font-size:28px}
+/**
+ *  * For modern browsers
+ *   * 1. The space content is one way to avoid an Opera bug when the
+ *    *    contenteditable attribute is included anywhere else in the document.
+ *     *    Otherwise it causes space to appear at the top and bottom of elements
+ *      *    that are clearfixed.
+ *       * 2. The use of `table` rather than `block` is only necessary if using
+ *        *    `:before` to contain the top-margins of child elements.
+ *         */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ *  * For IE 6/7 only
+ *   * Include this rule to trigger hasLayout and contain floats.
+ *    */
+.cf {
+    *zoom: 1;
+}
+
+.btn{display:inline-block;padding:1rem 1.5rem;font-size:1rem;background:#4a90e2;border:0;border-radius:8px;font-weight:700;color:#fff;text-decoration:none;text-align:center;cursor:pointer}.btn--block{display:block;width:100%}.btn--outline{background:none;border:1px solid #4a90e2;color:#fff}@media (min-width:1024px){.btn{padding:1rem 2rem}}*{box-sizing:border-box}img{max-width:100%}body{background:#1d3047;color:rgba(255,255,255,0.8);font-family:Oxygen,sans-serif;font-size:.9375rem;line-height:1.5;font-weight:500}h1,h2,h3,h4{color:#fff;font-weight:700;line-height:1.3;margin-bottom:.75rem}p{margin-bottom:1.5rem}h1{font-size:1.75rem}h2{font-size:1.5rem}h3{font-size:1.125rem}a{color:#7ed321}.text-centered{text-align:center}.flat{margin:0 !important}.container{width:100%;max-width:75rem;margin:0 auto;padding:0 1.25rem}.container--small{max-width:43.75rem}.container--between{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}.logo{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;font-size:1rem;color:#fff;}.logo img{max-width:3rem;margin-right:.75rem}.logo__label{text-transform:uppercase;font-weight:300;}.logo__label strong{font-weight:700}.logo--landing{min-height:50vh;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}.logo--landing img{max-width:8.75rem;margin-bottom:.75rem}.logo--landing .logo__label{font-size:1rem}.header{height:4.375rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}.login{display:none;color:#fff}.hero{padding:10vh 0;margin-bottom:10vh;border-bottom:1px solid rgba(255,255,255,0.25)}.hero__actions{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}.hero__footer{display:none}.footer{padding:1.5rem 0}.row{margin-left:-3rem}.col{padding-left:3rem;width:100%;float:left}@media (min-width:1024px){.header{box-shadow:0 1px 2px rgba(0,0,0,0.25);border-bottom:1px solid rgba(255,255,255,0.05)}.logo{font-size:1rem;}.logo img{max-width:1.5rem}.hero{min-height:calc(100vh - 4.375rem);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:0;margin:0;border-bottom:10px solid #7ed321;text-align:center;position:relative;}.hero:before,.hero:after{display:block;content:'';position:absolute;top:0;left:0;right:0;bottom:0}.hero:before{z-index:1;background-image:url("../images/woodworking.jpg");background-size:cover;opacity:.05}.hero__title{font-size:2.375rem}.hero__desc{font-size:1.125rem}.hero__content,.hero__footer{position:relative;z-index:10;width:100%}.hero__content{-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}.hero__actions{display:block;text-align:center;padding-top:1.5rem;}.hero__actions .btn:first-child{margin-right:1.5rem}.hero__footer{display:block;padding:1.5rem 0}.login{display:inline-block}.col--half{width:50%}.strip{height:80vh;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}.strip--alt{background-color:rgba(0,0,0,0.1)}.intro{line-height:1.8;font-weight:300;font-size:1.125rem;color:rgba(255,255,255,0.7)}}

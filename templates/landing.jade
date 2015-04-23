@@ -1,5 +1,51 @@
 extends ./layouts/layout.jade
 block title
-    title Page title
+    title Growth Learning - Training Delivered Differently - Certificate III Certificate IV Apprenticeships
 block content
-    h1 Growth Learning
+    .header
+        .container.container--between
+            .logo
+                img(src="images/G.png")
+                span.logo__label
+                    strong Growth
+                    | Learning
+            div
+                a(href="#").login Login 
+    .hero
+        .hero__content
+            .container
+                h1.hero__title Qualified training, delivered differently.
+                p.hero__desc Our software connects students, businesses and training providers in ways never before seen. 
+                .hero__actions
+                    a.btn(href="#") Find out more
+                    a.btn.btn--outline(href="#") Sign up
+        .hero__footer
+            .container
+                h4.text-centered.flat Growth Learning is reshaping the training landscape! 
+                    a(href="#") Get started now!
+                    i.fa.fa-chevron-down(style="margin-left: 0.75rem")
+    .strip.strip--alt
+        .intro.text-centered
+            h2.intro__title Our software ensures no one is left in the dark about training!
+            .container.container--small
+                p Unlike other training software, Growth focuses on keeping all lines of communication firing between everyone involved in the training off staff.
+                p Using the Growth Learning app, notifications are effectively delivered to both the business and the training providers whenever a staff member; begins a module, submits a photo for assessment, takes a quiz and plenty of other events.
+    .strip
+        .container
+            .row.cf
+                .col.col--half
+                    h3 Paperless training
+                    p With all our modules delivered through our apps, the days of maintaining a binder as big as an Encyclopedia are over. Staff can access training material whenever and whereever, as well as take assessments in the comfort of their own home.
+                .col.col--half
+                    h3 Focus on what's important to your organisation
+                    p If you are a small training organisation but still want to provide top notch training, leave the content up to us, we provide first class content for you to use and extend upon whenever you need to.
+            .row.cf
+                .col.col--half
+                    h3 Instant assessments
+                    p With the Growth Learning app, students will be able to snap photos of them performing practical work and have it approved instantly be your trainers. No longer do the students need to hold on to their photos for months until it comes time to hand them in.
+                .col.col--half
+                    h3 Simple enrolment
+                    p Growth has partnered up with training enrolment bodies, allowing you to instantly invite new students who will then receive a link to download the Growth Learning app, preloaded with their assigned modules.
+            .footer
+                .text-centered
+                    a(href="#").btn View pricing
