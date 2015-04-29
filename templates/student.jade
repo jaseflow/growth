@@ -1,0 +1,19 @@
+extends ./layouts/layout.jade
+block title
+    title {{ student }} - Growth Learning
+block content
+    .landing
+        .container
+            .landing__head.centered
+                img(src="/images/G-dark.png")
+                h4.landing__title Growth
+                    span Learning
+            .landing__form
+                form(method="post",action="")
+                    .form__group
+                        input.input.full(type="text",placeholder="Email address")
+                    .form__group
+                        input.input.full(type="text",placeholder="Password")
+                    button.btn.btn--block(type="submit") Login
+
+    script(src="/js/prototype.js")

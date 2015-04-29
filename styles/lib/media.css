@@ -1,0 +1,4 @@
+/* ====== media ====== */
+.media, .media__body {overflow:hidden; _overflow:visible; zoom:1;}
+.media__item {float:left; margin-right: 0.75rem;}
+.media__item img{display:block;}

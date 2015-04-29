@@ -1,0 +1,111 @@
+extends ./layouts/layout.jade
+block title
+    title {{ user.companyName }} - Growth Learning
+block content
+    include partials/header
+    .wrapper
+        .container
+            h3 Trainees
+            .row
+                .col.col--fifths
+                    .card
+                        .card__hd
+                            h4.card__title.flat Parks and Gardens
+                            p.flat.card__subtitle 
+                        .card__body
+                            h4.card__title.flat Add new trainee
+                            p.flat.card__subtitle Click to get started
+                .col.col--fifths
+                    .card
+                        .card__body
+                        .card__footer
+                            h4.card__title.flat Jack Bird
+                            p.flat.card__subtitle Registered 3 months ago
+                            a.btn(href="#").btn--bar.btn--block Edit rate
+            h3 Your content
+            .row
+                .col.col--fifths
+                    .card
+                        .card__body
+                            i.fa.fa-plus-circle.card__add
+                        .card__footer
+                            h4.card__title.flat Create your own
+                            p.flat.card__subtitle Click to get started
+                .col.col--fifths
+                    .card
+                        .card__body
+                        .card__bod
+                            h4.card__title.flat Control Plant Pests, Diseases and Disorders
+                                span (AHC31010)
+                            p.flat.card__subtitle Certificate III
+        .sidebar
+            .activity
+                h4.tiny-title.tiny-title--light Recent activity
+                .card
+                    .card__body
+                        .media.media--centered
+                            .media__item
+                                .card__item(style="background-image: url(http://www.blogpreston.co.uk/wp-content/uploads/2014/10/bae-apprentices-working630.jpg)")
+                            .media__body
+                                h4.card__title.flat
+                                    strong Jack Bird 
+                                    | uploaded a photo for approval 
+                                    span 24 hours ago
+                    .card__footer
+                        .card__action Approve
+                        .card__action Decline
+                .card
+                    .card__body
+                        .media
+                            .media__item
+                                .card__item.card__item--quiz.card__item--good 5
+                                    span 6
+                            .media__body
+                                h4.card__title.flat
+                                    strong Jack Bird 
+                                    | completed the 
+                                    strong Control Plants, Pests, Diseases and Disorders (AHC31010) 
+                                    | quiz.
+                                    span 24 hours ago
+                .card
+                    .card__body
+                        h4.card__title.flat
+                            strong Jack Bird 
+                            | started the learning guide for 
+                            strong Control Plants, Pests, Diseases and Disorders (AHC31010).
+                            span 24 hours ago
+                .card
+                    .card__body
+                        h4.card__title.flat
+                            strong Jack Bird 
+                            | was assigned 
+                            strong Certificate III in Parks and Gardens (AHC31010).
+                            span 24 hours ago
+                .card
+                    .card__body
+                        h4.card__title.flat
+                            strong Jack Bird 
+                            | started the learning guide for 
+                            strong Control Plants, Pests, Diseases and Disorders (AHC31010).
+                            span 24 hours ago
+                .card
+                    .card__body
+                        h4.card__title.flat
+                            strong Jack Bird 
+                            | was assigned 
+                            strong Certificate III in Parks and Gardens (AHC31010).
+                            span 24 hours ago
+                .card
+                    .card__body
+                        h4.card__title.flat
+                            strong Jack Bird 
+                            | started the learning guide for 
+                            strong Control Plants, Pests, Diseases and Disorders (AHC31010).
+                            span 24 hours ago
+                .card
+                    .card__body
+                        h4.card__title.flat
+                            strong Jack Bird 
+                            | was assigned 
+                            strong Certificate III in Parks and Gardens (AHC31010).
+                            span 24 hours ago

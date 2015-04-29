@@ -1,0 +1,43 @@
+@keyframes shiftUpHead
+    0%
+        opacity: 0
+    50%
+        opacity: 1
+    100%
+        transform: translateY(0)
+        opacity: 1
+
+@keyframes bringInForm
+    0%
+        opacity: 0 
+    100%
+        opacity: 1
+        transform: translateY(0)
+
+.landing
+    display: flex
+    align-items: center
+    justify-content: center
+    min-height: 100vh
+    background-color: $darkBlue
+    overflow: hidden
+
+.landing__head
+    margin-bottom: 3rem
+    position: relative
+    z-index: 50
+    opacity: 0
+    transform: translate3d(0,75%,0)
+    animation: shiftUpHead 1.5s ease forwards
+
+.landing__title
+    text-transform: uppercase
+    color: #fff
+    font-size: 0.75rem
+    span
+        opacity: 0.9
+
+.landing__form
+    opacity: 0
+    transform: translate3d(0,100%,0)
+    animation: bringInForm 0.75s 1.5s ease forwards

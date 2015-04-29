@@ -1,8 +1,13 @@
 @import 'lib/reset.css'
 @import 'lib/clearfix.css'
 @import 'variables'
+@import 'utility'
 
 @import 'components/buttons'
+@import 'components/cards'
+@import 'components/modules'
+@import 'components/landing'
+@import 'components/forms'
 
 *
     box-sizing: border-box
@@ -10,19 +15,26 @@
 img
     max-width: 100%
 
+html
 body
-    background: $darkBlue
-    color: rgba(255,255,255,0.8)
+    height: 100%
+
+body
+    background: #f4f4f4
+    color: #444
     font-family: Oxygen, sans-serif
     font-size: 0.9375rem
     line-height: 1.5
     font-weight: 500
 
+strong
+    font-weight: 700
+
 h1
 h2
 h3
 h4
-    color: #fff
+    color: #222
     font-weight: 700
     line-height: 1.3
     margin-bottom: 0.75rem
@@ -50,7 +62,6 @@ a
 
 .container
     width: 100%
-    max-width: 75rem
     margin: 0 auto
     padding: 0 1.25rem
 
@@ -70,12 +81,6 @@ a
         max-width: 3rem
         margin-right: 0.75rem
 
-.logo__label
-    text-transform: uppercase
-    font-weight: 300
-    strong
-        font-weight: 700
-
 .logo--landing
     min-height: 50vh
     flex-direction: column
@@ -86,9 +91,28 @@ a
         font-size: 1rem
 
 .header
-    height: 4.375rem
+    height: $headerHeight
+    display: flex
+    color: #fff
+    align-items: center
+    z-index: 50
+    position: fixed
+    width: 100%
+    background-color: $altBlue
+    border-bottom: 1px solid rgba(0,0,0,0.2)
+    box-shadow: 0 1px 1px rgba(0,0,0,0.6)
+
+.header__actions
     display: flex
     align-items: center
+
+.header__seperator
+    padding-left: 0.75rem
+    margin-left: 0.75rem
+    border-left: 1px solid rgba(255,255,255,0.2)
+
+.header .btn
+    margin-left: 0.75rem
 
 .login
     display: none
@@ -110,21 +134,33 @@ a
     padding: 1.5rem 0
 
 .row
-    margin-left: -3rem
+    margin-left: -($colGutter)
+    overflow: hidden
 
 .col
-    padding-left: 3rem
+    padding-left: $colGutter
     width: 100%
     float: left
 
+.media
+    display: flex
+
+.media__item
+    padding-right: 0.75rem
+
+.media--centered
+    align-items: center
+
+.media__body
+    flex: 1
+
 @media(min-width: 1024px)
 
-    .header
-        box-shadow: 0 1px 2px rgba(0,0,0,0.25)
-        border-bottom: 1px solid rgba(255,255,255,0.05)
+    .container
+        padding: 0 1.5rem
 
     .logo
-        font-size: 1rem
+        font-size: 0.875rem
         img
             max-width: 1.5rem
     
@@ -135,9 +171,9 @@ a
         flex-direction: column
         padding: 0
         margin: 0
-        border-bottom: 10px solid $green
         text-align: center
         position: relative
+        border-bottom: 0
         &:before
         &:after
             display: block
@@ -151,7 +187,7 @@ a
             z-index: 1
             background-image: url(../images/woodworking.jpg)
             background-size: cover
-            opacity: 0.05
+            opacity: 0.15
 
     .hero__title
         font-size: 2.375rem
@@ -180,12 +216,19 @@ a
     .hero__footer
         display: block
         padding: 1.5rem 0
+        background-color: rgba(255,255,255,0.1)
 
     .login
         display: inline-block
 
     .col--half
         width: 50%
+
+    .col--fifths
+        width: 25%
+
+    .col--sixths
+        width: 16.666666667%
 
     .strip
         height: 80vh
@@ -195,9 +238,44 @@ a
 
     .strip--alt
         background-color: rgba(0,0,0,0.1)
+        background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2))
 
     .intro
         line-height: 1.8
         font-weight: 300
         font-size: 1.125rem
         color: rgba(255,255,255,0.7)
+
+    .popover__label
+        font-size: 12px
+        color: #fff
+        display: block
+        cursor: pointer
+
+    .wrapper
+        position: relative
+        padding-right: $sidebarWidth
+        padding-top: ($headerHeight + 1.5rem)
+
+    .sidebar
+        position: fixed
+        overflow-y: auto
+        right: 0
+        top: $headerHeight
+        width: $sidebarWidth
+        background-color: $sidebarBg
+        bottom: 0
+        padding: 1.5rem
+
+    .tiny-title
+        font-size: 0.625rem
+        color: #666
+        text-transform: uppercase
+        padding-bottom: 0.375rem
+        border-bottom: 1px solid #bbb
+
+    .tiny-title--light
+        color: #fff
+
+    .empty-state
+        padding-top: 12.5rem

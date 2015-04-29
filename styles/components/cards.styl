@@ -1,0 +1,83 @@
+.card
+    background-color: #fff
+    padding: 1.5rem
+    box-shadow: 0 1px 0 rgba(0,0,0,0.4)
+    margin-bottom: 0.75rem
+    border-radius: 4px
+    overflow: hidden
+
+.card__title
+    font-size: 0.8125rem
+    color: #999
+    font-weight: 500
+    strong
+        color: #333
+        font-weight: 700
+    span
+        padding-top: 0.375rem
+        color: #999
+        font-size: 0.625rem
+        display: block
+
+.card__item
+    width: 3.75rem
+    height: 3.75rem
+    background-size: cover
+    background-position: center
+    background-color: #ddd
+
+.card__item--good
+    background: $green
+
+.card__item--quiz
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    font-size: 1.75rem
+    font-weight: 700
+    border-radius: 4px
+    color: rgba(0,0,0,0.5)
+    box-shadow: 0 1px 0 rgba(0,0,0,0.4)
+    span
+        position: absolute
+        bottom: 0
+        right: 0
+        font-size: 0.75rem
+        width: 2rem
+        text-align: right
+        padding-right: 0.375rem
+        z-index: 2
+        color: #fff
+    &:before
+        position: absolute
+        bottom: 0
+        right: 0
+        content: ''
+        display: block
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 0 2rem 2rem
+        border-color: transparent transparent rgba(0,0,0,0.3) transparent
+
+.card__footer
+    margin: -1.5rem
+    margin-top: 1.5rem
+    background: #eee
+    display: flex
+    align-items: center
+    border-top: 1px solid #ddd
+
+.card__action
+    padding: 0.7rem 1.5rem
+    font-size: 0.75rem
+    border-left: 1px solid #ccc
+    font-weight: 700
+    color: $darkBlue
+    cursor: pointer
+    transition: all 0.25s ease
+    &:hover
+        color: $blue
+    &:first-child
+        border-left: 0

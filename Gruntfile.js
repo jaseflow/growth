@@ -19,6 +19,16 @@ module.exports = function(grunt) {
                     }
                 }
             },
+            compress: {
+                options: 'gzip',
+                assets: {
+                    expand: true,
+                    cwd: 'public/css',
+                    src: '*',
+                    dest: 'public/css',
+                    ext: '.gz.css'
+                }
+            },
             clean: {
                 release : ['<%= releaseDirectory %>/']
             },
@@ -74,7 +84,10 @@ module.exports = function(grunt) {
                         }
                     },
                     files: {
-                        'public/index.html': ['templates/*.jade']
+                        'public/index.html': ['templates/index.jade'],
+                        'public/admin/index.html': ['templates/admin.jade'],
+                        'public/admin/module.html': ['templates/module.jade'],
+                        'public/student/index.html': ['templates/student.jade']
                     }
                 }
             },
@@ -112,6 +125,18 @@ module.exports = function(grunt) {
                     ]
                 }
             },
+            html2js: {
+                options: {
+                    jade: {
+                        doctype: 'html'
+                    },
+                    watch: true
+                },
+                main: {
+                    src: ['templates/**/*.jade'],
+                    dest: 'public/templates/templates.js'
+                }
+            },
             watch: {
                 uglify: {
                     files: ['scripts/*.js'],
@@ -122,7 +147,7 @@ module.exports = function(grunt) {
                     tasks: ['stylus','autoprefixer']
                 },
                 jade: {
-                    files: ['templates/**/*.jade'],
+                    files: ['templates/**/*.jade','modules/**/*.md'],
                     tasks: ['jade']
                 },
                 imagemin: {
@@ -134,8 +159,7 @@ module.exports = function(grunt) {
                         livereload: true
                     },
                     files: [
-                        'public/css/*.css',
-                        'public/*.html'
+                        'public/**/*'
                     ]
                 }
             }
@@ -153,7 +177,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-aws-s3');
+    grunt.loadNpmTasks('grunt-html2js');
 
     // Register tasks
     grunt.registerTask('build', ['stylus','autoprefixer','uglify', 'jade','imagemin']);
