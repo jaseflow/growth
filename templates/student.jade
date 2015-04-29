@@ -1,6 +1,6 @@
 extends ./layouts/layout.jade
 block title
-    title {{ student }} - Growth Learning
+    title Growth Learning
 block content
     .landing
         .container
@@ -9,11 +9,9 @@ block content
                 h4.landing__title Growth
                     span Learning
             .landing__form
-                form(method="post",action="")
+                form(action="/student/courses.html")
                     .form__group
                         input.input.full(type="text",placeholder="Email address")
                     .form__group
                         input.input.full(type="text",placeholder="Password")
                     button.btn.btn--block(type="submit") Login
-
-    script(src="/js/prototype.js")

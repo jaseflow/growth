@@ -72,7 +72,7 @@ module.exports = function(grunt) {
                 },
                 client: {
                     files: {
-                        'public/js/client.js': ['scripts/*.js']
+                        'public/js/client.js': ['scripts/*.js'],
                     }
                 }
             },
@@ -86,8 +86,9 @@ module.exports = function(grunt) {
                     files: {
                         'public/index.html': ['templates/index.jade'],
                         'public/admin/index.html': ['templates/admin.jade'],
-                        'public/admin/module.html': ['templates/module.jade'],
-                        'public/student/index.html': ['templates/student.jade']
+                        'public/student/index.html': ['templates/student.jade'],
+                        'public/student/courses.html': ['templates/courses.jade'],
+                        'public/student/module.html': ['templates/module.jade']
                     }
                 }
             },

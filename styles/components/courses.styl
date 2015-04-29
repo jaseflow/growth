@@ -1,0 +1,71 @@
+@keyframes fadeInRight
+    0%
+        transform: translateX(50%)
+    100%
+        opacity: 1
+        transform: translateX(0)
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+@keyframes fadeOutLeft
+    0%
+        transform: translateX(0)
+    100%
+        opacity: 0
+        transform: translateX(-100%)
+
+.course__level
+    font-weight: 500
+    color: #999
+
+.course__module
+    display: block
+    color: #ccc
+    text-decoration: none
+    padding: 1.5rem
+    border-top: 1px solid #d9d9d9
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+    opacity: 0
+    animation: fadeInRight 0.25s ease forwards
+
+.course__modules
+    li:first-child
+        .course__module
+            border-top: 0
+    li:nth-child(2)
+        .course__module
+            animation-delay: 0.1s
+    li:nth-child(3)
+        .course__module
+            animation-delay: 0.2s
+    li:nth-child(4)
+        .course__module
+            animation-delay: 0.3s
+    li:nth-child(5)
+        .course__module
+            animation-delay: 0.4s
+    li:nth-child(6)
+        .course__module
+            animation-delay: 0.5s
+
+.course__module--active
+    color: #333
+
+.course__progress
+    margin-top: 0.75rem
+    margin-bottom: 0 !important
+
+#course
+    &.exit
+        animation: fadeOutLeft 0.25s ease forwards
+
+#module
+    opacity: 0
+    display: none
+    &.enter
+        display: block
+        animation: fadeIn 0.25s ease forwards

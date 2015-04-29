@@ -1,0 +1,45 @@
+extends ./layouts/layout.jade
+block title
+    title Growth Learning
+block content
+    .header
+        .container.container--between.container--align
+            i.fa.fa-bars(style="font-size: 1.125rem")#headerBtn
+            h3.flat Jason Corbett
+            div
+    .wrapper
+        .container
+            .card#course
+                .card__hd
+                    h3.course__title.flat Safety and Testing
+                    h4.course__level Certificate IV
+                .card__body
+                    ul.unstyled.course__modules
+                        li
+                            a.course__module.course__module--active(href="/student/module.html")
+                                .container--between Safety in the workplace
+                                    strong AHC12342 
+                                .progress.course__progress
+                                    .progress__bar
+                        li
+                            a.course__module(href="#")
+                                .container--between Don't forget, safety first
+                                    strong AHC42432 
+                        li
+                            a.course__module(href="#")
+                                .container--between Keeping it simple
+                                    strong AHC11234
+                        li
+                            a.course__module(href="#")
+                                .container--between Look both ways
+                                    strong AHC14233
+                        li
+                            a.course__module(href="#")
+                                .container--between Bend at the knees
+                                    strong AHC23212
+                        li
+                            a.course__module(href="#")
+                                .container--between Safety in the workplace
+                                    strong AHC12342 
+            #module
+                include:md ../modules/AHC12342/section1.md

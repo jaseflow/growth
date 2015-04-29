@@ -2,5 +2,11 @@ extends ./layouts/layout.jade
 block title
     title Growth Learning - Training Delivered Differently - Certificate III Certificate IV Apprenticeships
 block content
-    include partials/header
-    include:md ../modules/AHCPMG301A/section1.md
+    .header
+        .container.container--between.container--align
+            i.fa.fa-arrow-left
+            h3.flat Safety in the workplace
+            div
+    .wrapper
+        .container
+            include:md ../modules/AHC12342/section1.md
