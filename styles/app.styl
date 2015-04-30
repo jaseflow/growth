@@ -10,6 +10,8 @@
 @import 'components/forms'
 @import 'components/courses'
 @import 'components/progress'
+@import 'components/header'
+@import 'components/overlay'
 
 *
     box-sizing: border-box
@@ -22,7 +24,7 @@ body
     height: 100%
 
 body
-    background: #e9e9e9
+    background: #f9f9f9
     color: #444
     font-family: Oxygen, sans-serif
     font-size: 0.9375rem
@@ -66,10 +68,17 @@ a
 .container
     width: 100%
     margin: 0 auto
-    padding: 0 1.25rem
+    padding: 0 0.75rem
+
+.container--alt
+    padding-top: 1.5rem
+    padding-bottom: 1.5rem
 
 .container--small
     max-width: 43.75rem
+
+.container--mobile
+    max-width: 25rem
 
 .container--between
     display: flex
@@ -96,18 +105,6 @@ a
     .logo__label
         font-size: 1rem
 
-.header
-    height: $headerHeight
-    display: flex
-    color: #fff
-    align-items: center
-    z-index: 50
-    position: fixed
-    width: 100%
-    background-color: $altBlue
-    border-bottom: 1px solid rgba(0,0,0,0.2)
-    box-shadow: 0 1px 1px rgba(0,0,0,0.6)
-
 .header__actions
     display: flex
     align-items: center
@@ -116,9 +113,6 @@ a
     padding-left: 0.75rem
     margin-left: 0.75rem
     border-left: 1px solid rgba(255,255,255,0.2)
-
-.header .btn
-    margin-left: 0.75rem
 
 .login
     display: none
@@ -161,7 +155,7 @@ a
     flex: 1
 
 .wrapper
-    padding-top: $headerHeight + 1.5rem 
+    padding-top: $headerHeight
 
 @media(min-width: 1024px)
 
@@ -263,7 +257,6 @@ a
 
     .wrapper
         position: relative
-        padding-right: $sidebarWidth
         padding-top: ($headerHeight + 1.5rem)
 
     .sidebar

@@ -3,17 +3,18 @@ block title
     title Growth Learning
 block content
     .header
-        .container.container--between.container--align
+        .header__container.container.container--between.container--align
             i.fa.fa-bars(style="font-size: 1.125rem")#headerBtn
-            h3.flat Jason Corbett
-            div
+            h3.flat.header__title#title Jason Corbett
+            .header__action
+                .btn.btn--bar Listen
     .wrapper
-        .container
-            .card#course
-                .card__hd
+        #course
+            .course
+                .course__hd
                     h3.course__title.flat Safety and Testing
-                    h4.course__level Certificate IV
-                .card__body
+                    h4.course__level.flat Certificate IV
+                .course__body
                     ul.unstyled.course__modules
                         li
                             a.course__module.course__module--active(href="/student/module.html")
@@ -41,5 +42,11 @@ block content
                             a.course__module(href="#")
                                 .container--between Safety in the workplace
                                     strong AHC12342 
-            #module
-                include:md ../modules/AHC12342/section1.md
+        #module
+            .container.container--alt
+                .module-content
+                    include:md ../modules/AHC12342/section1.md
+     .overlay#overlay
+         .overlay__content
+             .overlay__action#overlayClose Close
+             img(src="")#overlayImage
