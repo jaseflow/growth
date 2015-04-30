@@ -1,0 +1,42 @@
+.playlist
+    min-height: calc(100vh - 3.125rem);
+
+.playlist__track
+    font-weight: 500
+    .active
+        font-weight: 700
+
+.playlist__item
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 1.5rem 0.75rem
+    border-top: 1px solid #ddd
+    &:first-child
+        border-top: 0
+
+.playlist__footer
+    background: #fff
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    padding: 1.5rem 0.75rem
+
+.playlist__controls
+    display: flex
+    align-items: center
+    justify-content: space-around
+    margin-bottom: 1.5rem
+
+.playlist__control.inactive
+    color: #999
+
+.volume
+    display: flex
+    align-items: center
+    justify-content: space-between
+    color: #ccc
+    .slider
+        flex: 1
+        margin: 0 0.75rem

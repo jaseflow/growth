@@ -7,7 +7,7 @@ block content
             i.fa.fa-bars(style="font-size: 1.125rem")#headerBtn
             h3.flat.header__title#title Jason Corbett
             .header__action
-                .btn.btn--bar Listen
+                .btn.btn--bar#toggleMode Listen
     .wrapper
         #course
             .course
@@ -42,10 +42,33 @@ block content
                             a.course__module(href="#")
                                 .container--between Safety in the workplace
                                     strong AHC12342 
-        #module
-            .container.container--alt
-                .module-content
+        #module.text
+            .module-content(hidden)
+                .container.container--alt
                     include:md ../modules/AHC12342/section1.md
+            .playlist
+                .playlist__tracks
+                    .playlist__item
+                        strong.playlist__track Introduction
+                        small 2:12 
+                    .playlist__item
+                        strong.playlist__track What is PPE?
+                        small 1:54
+                    .playlist__item
+                        strong.playlist__track Types of PPE
+                        small 4:20
+                .playlist__footer
+                    .playlist__controls
+                        i.fa.fa-backward.playlist__control.inactive
+                        i.fa.fa-play.playlist__control(style="font-size: 38px")
+                        i.fa.fa-forward.playlist__control
+                    .volume
+                        i.fa.fa-volume-off
+                        .slider
+                            .slider__wrap
+                                .slider__progress
+                            .slider__knob
+                        i.fa.fa-volume-up
      .overlay#overlay
          .overlay__content
              .overlay__action#overlayClose Close

@@ -42,6 +42,10 @@ var showOverlay = function(event) {
     overlayImage.setAttribute('src',src);
 }
 
+var toggleMode = function(event) {
+    module.classList.toggle('audio');
+}
+
 document.querySelector('.course__module').addEventListener('click', showCourse);
 
 document.querySelector('#headerBtn').addEventListener('click', moveBack);
@@ -49,3 +53,5 @@ document.querySelector('#headerBtn').addEventListener('click', moveBack);
 document.querySelector('.module-content img').addEventListener('click', showOverlay);
 
 document.querySelector('#overlayClose').addEventListener('click', showOverlay);
+
+document.querySelector('#toggleMode').addEventListener('click', toggleMode);

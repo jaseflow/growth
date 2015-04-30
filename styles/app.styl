@@ -12,6 +12,8 @@
 @import 'components/progress'
 @import 'components/header'
 @import 'components/overlay'
+@import 'components/playlist'
+@import 'components/slider'
 
 *
     box-sizing: border-box
@@ -24,7 +26,7 @@ body
     height: 100%
 
 body
-    background: #f9f9f9
+    background: #e9e9e9
     color: #444
     font-family: Oxygen, sans-serif
     font-size: 0.9375rem
@@ -156,6 +158,18 @@ a
 
 .wrapper
     padding-top: $headerHeight
+
+.text
+    .module-content
+        display: block
+    .playlist
+        display: none
+
+.audio
+    .module-content
+        display: none
+    .playlist
+        display: block
 
 @media(min-width: 1024px)
 
