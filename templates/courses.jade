@@ -7,8 +7,11 @@ block content
             i.fa.fa-bars(style="font-size: 1.125rem")#headerBtn
             h3.flat.header__title#title Jason Corbett
             .header__action
-                .btn.btn--bar#toggleMode Listen
-    .wrapper
+                .btn.btn--bar.fa.fa-headphones#toggleMode
+    .wrapper#wrapper
+        .toolbar
+            .search
+                input.input.full.search__input(placeholder="Search...")
         #course
             .course
                 .course__hd
@@ -22,6 +25,20 @@ block content
                                     strong AHC12342 
                                 .progress.course__progress
                                     .progress__bar
+                                ul.course__list
+                                    li.done
+                                        i.fa.fa-check 
+                                        | Read theory
+                                    li
+                                        i.fa.fa-check 
+                                        | Quiz
+                                    li
+                                        i.fa.fa-check 
+                                        | Provide practical evidence
+                                    li
+                                        i.fa.fa-check 
+                                        | Assessment
+
                         li
                             a.course__module(href="#")
                                 .container--between Don't forget, safety first
@@ -58,9 +75,14 @@ block content
                         strong.playlist__track Types of PPE
                         small 4:20
                 .playlist__footer
+                    .playlist__progress
+                        .slider
+                            .slider__wrap.slider__wrap--thin
+                                .slider__progress
+                            .slider__knob.slider__knob--bar
                     .playlist__controls
                         i.fa.fa-backward.playlist__control.inactive
-                        i.fa.fa-play.playlist__control(style="font-size: 38px")
+                        i.fa.fa-play.playlist__control#playButton(style="font-size: 38px")
                         i.fa.fa-forward.playlist__control
                     .volume
                         i.fa.fa-volume-off
@@ -69,7 +91,10 @@ block content
                                 .slider__progress
                             .slider__knob
                         i.fa.fa-volume-up
-     .overlay#overlay
-         .overlay__content
-             .overlay__action#overlayClose Close
-             img(src="")#overlayImage
+    .actions#actions
+        span.actions__link Take a quiz
+        span.actions__link Begin assessment
+    .overlay#overlay
+        .overlay__content
+            .overlay__action#overlayClose Close
+            img(src="")#overlayImage

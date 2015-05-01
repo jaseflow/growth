@@ -14,6 +14,8 @@
 @import 'components/overlay'
 @import 'components/playlist'
 @import 'components/slider'
+@import 'components/search'
+@import 'components/actions'
 
 *
     box-sizing: border-box
@@ -26,7 +28,7 @@ body
     height: 100%
 
 body
-    background: #e9e9e9
+    background: #fefefe
     color: #444
     font-family: Oxygen, sans-serif
     font-size: 0.9375rem
@@ -65,7 +67,7 @@ a
     text-align: center
 
 .flat
-    margin: 0 !important
+    margin-bottom: 0 !important
 
 .container
     width: 100%
@@ -158,6 +160,8 @@ a
 
 .wrapper
     padding-top: $headerHeight
+    will-change: transform
+    transition: all 0.25s ease
 
 .text
     .module-content
@@ -166,10 +170,20 @@ a
         display: none
 
 .audio
+    transform: translateY(-($toolbarHeight))
     .module-content
         display: none
     .playlist
         display: block
+
+.toolbar
+    background-color: darken($blue,30)
+    height: $toolbarHeight
+    display: flex
+    align-items: center
+    padding: 0 0.75rem
+    .search
+        flex: 1
 
 @media(min-width: 1024px)
 

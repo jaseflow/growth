@@ -7,7 +7,6 @@
     position: fixed
     width: 100%
     background-color: $altBlue
-    box-shadow: 0 1px 0 rgba(0,0,0,0.4)
 
 .header__container > *
     z-index: 10
@@ -15,18 +14,28 @@
 .header__title
     position: absolute
     top: 0
-    left: 0
-    width: 100%
+    left: 50%
+    margin-left: -6.25rem
+    width: 12.5rem
     height: 100%
     z-index: 1 !important
     text-align: center
     line-height: $headerHeight
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    font-size: 1rem
 
 .header__action
     position: relative
     transform: translateX(calc(100%+0.75rem))
     transition: all 0.25s ease
     -webkit-will-change: transform
+    i
+        font-size: 1.125rem
 
 .header__action.visible
     transform: translateX(0)
+
+#toggleMode
+    font-size: 1.125rem

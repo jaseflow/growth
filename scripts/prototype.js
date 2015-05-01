@@ -4,11 +4,14 @@ var course = document.querySelector('#course'),
     headerAction = document.querySelector('.header__action'),
     title = document.querySelector('#title'),
     overlay = document.querySelector('#overlay'),
-    overlayImage = document.querySelector('#overlayImage');
+    wrapper = document.querySelector('#wrapper'),
+    overlayImage = document.querySelector('#overlayImage'),
+    actions = document.querySelector('#actions'),
+    playButton = document.querySelector('#playButton');
 
 var swapTime = 250;
 
-var titleCourse = 'Safety and Testing',
+var titleModule = 'Safety in the workplace',
     titleUser = 'Jason Corbett';
 
 var showCourse = function(event) {
@@ -17,7 +20,8 @@ var showCourse = function(event) {
     headerBtn.classList.remove('fa-bars');
     headerBtn.classList.add('fa-arrow-left');
     headerAction.classList.add('visible');
-    title.textContent=titleCourse;
+    title.textContent=titleModule;
+    actions.classList.add('actions--active');
     setTimeout(function() {
         course.setAttribute('hidden','');
         module.classList.add('enter');
@@ -33,6 +37,7 @@ var moveBack = function(event) {
         module.classList.remove('enter');
         course.classList.remove('exit');
         course.removeAttribute('hidden');
+        actions.classList.remove('actions--active');
     }
 }
 
@@ -43,15 +48,19 @@ var showOverlay = function(event) {
 }
 
 var toggleMode = function(event) {
-    module.classList.toggle('audio');
+    wrapper.classList.toggle('audio');
+    actions.classList.toggle('actions--active');
+}
+
+var startSong = function(event) {
+    event.target.classList.add('active');
+    console.log(event);
+    playButton.classList.add('fa-pause');
 }
 
 document.querySelector('.course__module').addEventListener('click', showCourse);
-
 document.querySelector('#headerBtn').addEventListener('click', moveBack);
-
 document.querySelector('.module-content img').addEventListener('click', showOverlay);
-
 document.querySelector('#overlayClose').addEventListener('click', showOverlay);
-
 document.querySelector('#toggleMode').addEventListener('click', toggleMode);
+document.querySelector('.playlist__item').addEventListener('click', startSong);
