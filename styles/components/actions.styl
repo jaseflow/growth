@@ -1,18 +1,55 @@
 .actions
+    transform: translateZ(0)
     position: fixed
     top: 100%
     left: 0
     width: 100%
-    display: flex
-    align-items: center
-    justify-content: space-around
-    background: #fafafa
+    background: #f9f9f9
     border-top: 1px solid #ddd
     transition: all 0.25s ease
+    height: 100vh
+    overflow-y: auto
+    z-index: 50
+    padding-top: 3.125rem
+
+.actions__nav
+    position: fixed
+    transition: all 0.25s ease
+    top: 100%
+    left: 0
+    width: 100%
+    display: flex
+    height: $actionsNavHeight
+    align-items: center
+    justify-content: center
+    background: #fff
+    border-top: 1px solid #ddd
+
+.actions__hd
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 1.5rem
+    border-bottom: 1px solid #ddd
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 3.125rem
+
+.actions__close
+    color: $blue
+    font-weight: 700
+
+.actions__nav--visible
+    transform: translateY(-($actionsNavHeight))
+    transition-delay: 0.25s
+
+.actions__body
+    padding: 1.5rem
 
 .actions--active
     transform: translateY(-100%)
-    transition-delay: 0.25s
 
 .actions__link
     height: 2.75rem

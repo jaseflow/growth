@@ -1,0 +1,43 @@
+.quiz__question
+    margin-bottom: 1.5rem
+
+.quiz__option
+    background-color: #fff
+    border: 1px solid #ddd
+    border-bottom-color: #aaa
+    border-radius: 0.25rem
+    padding: 1.5rem 0.75rem
+    position: relative
+    margin-bottom: 0.75rem
+    transition-delay: 0.25s
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+    &:before
+        position: absolute
+        top: -0.25rem
+        left: -0.25rem
+        right: -0.25rem
+        bottom: -0.25rem
+        border-radius: 0.375rem
+        background: red
+        display: block
+        content: ''
+        z-index: -1
+        transition: all 0.25s ease-in
+        transform: scale(0.9)
+        opacity: 0
+
+.quiz__option--right
+.quiz__option--wrong
+    &:before
+        transform: scale(1)
+        opacity: 1
+
+.quiz__option--right
+    border-color: $green
+    &:before
+        background: $green
+
+.quiz__option--wrong
+    border-color: $orange
+    &:before
+        background: $orange

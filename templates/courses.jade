@@ -20,45 +20,52 @@ block content
                 .course__body
                     ul.unstyled.course__modules
                         li
-                            a.course__module.course__module--active(href="/student/module.html")
-                                .container--between Safety in the workplace
-                                    strong AHC12342 
-                                .progress.course__progress
-                                    .progress__bar
-                                ul.course__list
-                                    li.done
-                                        i.fa.fa-check 
-                                        | Read theory
-                                    li
-                                        i.fa.fa-check 
-                                        | Quiz
-                                    li
-                                        i.fa.fa-check 
-                                        | Provide practical evidence
-                                    li
-                                        i.fa.fa-check 
-                                        | Assessment
+                            a.card.course__module.course__module--active(href="/student/module.html")
+                                .card__hd
+                                    .container--between Safety in the workplace
+                                        strong AHC12342 
+                                    .progress.course__progress
+                                        .progress__bar
+                                .card__body
+                                    ul.course__list
+                                        li.done
+                                            i.fa.fa-check 
+                                            | Read theory
+                                        li
+                                            i.fa.fa-check 
+                                            | Quiz
+                                        li
+                                            i.fa.fa-check 
+                                            | Provide practical evidence
+                                        li
+                                            i.fa.fa-check 
+                                            | Assessment
 
                         li
-                            a.course__module(href="#")
-                                .container--between Don't forget, safety first
-                                    strong AHC42432 
+                            a.card.course__module(href="#")
+                                .card__hd
+                                    .container--between Don't forget, safety first
+                                        strong AHC42432 
                         li
-                            a.course__module(href="#")
-                                .container--between Keeping it simple
-                                    strong AHC11234
+                            a.card.course__module(href="#")
+                                .card__hd
+                                    .container--between Keeping it simple
+                                        strong AHC11234
                         li
-                            a.course__module(href="#")
-                                .container--between Look both ways
-                                    strong AHC14233
+                            a.card.course__module(href="#")
+                                .card__hd
+                                    .container--between Look both ways
+                                        strong AHC14233
                         li
-                            a.course__module(href="#")
-                                .container--between Bend at the knees
-                                    strong AHC23212
+                            a.card.course__module(href="#")
+                                .card__hd
+                                    .container--between Bend at the knees
+                                        strong AHC23212
                         li
-                            a.course__module(href="#")
-                                .container--between Safety in the workplace
-                                    strong AHC12342 
+                            a.card.course__module(href="#")
+                                .card__hd
+                                    .container--between Safety in the workplace
+                                        strong AHC12342 
         #module.text
             .module-content(hidden)
                 .container.container--alt
@@ -92,6 +99,37 @@ block content
                             .slider__knob
                         i.fa.fa-volume-up
     .actions#actions
+        .actions__hd
+            h4.action__title.flat Take a quiz
+            span.actions__close Close
+        .actions__body
+            p.reminder
+                strong Remember 
+                | - you are not assessed upon these results. Attempting these quizes will help you remember what you are reading!
+            form.form.quiz
+                .slides
+                    .slide.slide--active(data-order="1")
+                        h4.quiz__question What does PPE mean?
+                        ul
+                            li.quiz__option(data-answer="right") Personal protective equipment 
+                            li.quiz__option(data-answer="wrong") Private patient education 
+                            li.quiz__option(data-answer="wrong") Patient program event 
+                            li.quiz__option(data-answer="wrong") Periodic protection episode 
+                    .slide(data-order="2")
+                        h4.quiz__question Which of the following is not a PPE?
+                        ul
+                            li.quiz__option(data-answer="right") Respirator 
+                            li.quiz__option(data-answer="wrong") Googles 
+                            li.quiz__option(data-answer="wrong") Uniform 
+                            li.quiz__option(data-answer="wrong") Gloves 
+                    .slide(data-order="3")
+                        h4.quiz__question Which of the following is an example of how germs are transferred from one location to another?
+                        ul
+                            li.quiz__option(data-answer="wrong") Air 
+                            li.quiz__option(data-answer="wrong") Clothes 
+                            li.quiz__option(data-answer="wrong") Hands 
+                            li.quiz__option(data-answer="right") All of the above 
+    .actions__nav
         span.actions__link Take a quiz
         span.actions__link Begin assessment
     .overlay#overlay

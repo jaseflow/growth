@@ -7,6 +7,8 @@ var course = document.querySelector('#course'),
     wrapper = document.querySelector('#wrapper'),
     overlayImage = document.querySelector('#overlayImage'),
     actions = document.querySelector('#actions'),
+    actionsNav = document.querySelector('.actions__nav'),
+    quizSlides = document.querySelector('#quiz-slides'),
     playButton = document.querySelector('#playButton');
 
 var swapTime = 250;
@@ -21,7 +23,7 @@ var showCourse = function(event) {
     headerBtn.classList.add('fa-arrow-left');
     headerAction.classList.add('visible');
     title.textContent=titleModule;
-    actions.classList.add('actions--active');
+    actionsNav.classList.add('actions__nav--visible');
     setTimeout(function() {
         course.setAttribute('hidden','');
         module.classList.add('enter');
@@ -37,7 +39,7 @@ var moveBack = function(event) {
         module.classList.remove('enter');
         course.classList.remove('exit');
         course.removeAttribute('hidden');
-        actions.classList.remove('actions--active');
+        actionsNav.classList.remove('actions__nav--visible');
     }
 }
 
@@ -49,13 +51,40 @@ var showOverlay = function(event) {
 
 var toggleMode = function(event) {
     wrapper.classList.toggle('audio');
-    actions.classList.toggle('actions--active');
+    actionsNav.classList.toggle('actions__nav--visible');
 }
 
 var startSong = function(event) {
     event.target.classList.add('active');
-    console.log(event);
     playButton.classList.add('fa-pause');
+}
+
+var openActions = function(event) {
+    actions.classList.toggle('actions--active')
+}
+
+var quizCount = 1;
+var selectAnswer = function(event) {
+    var answer = event.toElement.dataset.answer,
+        activeAnswer = document.querySelector('.slide--active'),
+        activeClass = 'slide--active',
+        doneClass = 'slide--done',
+        quizLength = document.querySelectorAll('.quiz__question').length,
+        slides = document.querySelectorAll('.slide');
+
+    event.toElement.classList.add('quiz__option--' + answer);
+    activeAnswer.classList.add(doneClass);
+    quizCount++;
+    [].forEach.call(slides, function (el) {
+        if(!quizCount <= slides.length) {
+            if(el.dataset.order == (quizCount-1)) {
+                el.classList.add(doneClass);
+            }
+            if(el.dataset.order == quizCount) {
+                el.classList.add(activeClass);
+            }
+        }
+    });
 }
 
 document.querySelector('.course__module').addEventListener('click', showCourse);
@@ -64,3 +93,9 @@ document.querySelector('.module-content img').addEventListener('click', showOver
 document.querySelector('#overlayClose').addEventListener('click', showOverlay);
 document.querySelector('#toggleMode').addEventListener('click', toggleMode);
 document.querySelector('.playlist__item').addEventListener('click', startSong);
+document.querySelector('.actions__link').addEventListener('click', openActions);
+document.querySelector('.actions__close').addEventListener('click', openActions);
+var quizOptions = document.querySelectorAll('.quiz__option');
+[].forEach.call(quizOptions, function (el) {
+    el.addEventListener('click', selectAnswer);
+});

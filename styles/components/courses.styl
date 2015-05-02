@@ -5,11 +5,13 @@
         opacity: 1
         transform: translateX(0)
 
-@keyframes fadeIn
+@keyframes showModule
     0%
         opacity: 0
+        transform: scale(0.95)
     100%
         opacity: 1
+        transform: scale(1)
 
 @keyframes fadeOutLeft
     0%
@@ -21,27 +23,27 @@
 .course__hd
     padding: 1.5rem 0
     color: #333
-    border-bottom: 1px solid #d9d9d9
     margin: 0 0.75rem
 
 .course__level
     font-weight: 500
+    font-size: 0.75rem
     opacity: 0.5
 
 .course__module
     display: block
     color: #ccc
     text-decoration: none
-    padding: 1.5rem 0.75rem
-    border-top: 1px solid #d9d9d9
+    border-bottom-color: #aaa
+    box-shadow: none
     -webkit-tap-highlight-color: rgba(0,0,0,0)
     opacity: 0
     animation: fadeInRight 0.25s ease forwards
+    margin-left: 0.75rem
+    margin-right: 0.75rem
+    border-radius: 0.125rem
 
 .course__modules
-    li:first-child
-        .course__module
-            border-top: 0
     li:nth-child(2)
         .course__module
             animation-delay: 0.1s
@@ -91,6 +93,7 @@
 #module
     opacity: 0
     display: none
+    transform-origin: center
     &.enter
         display: block
-        animation: fadeIn 0.25s ease forwards
+        animation: showModule 0.25s ease forwards

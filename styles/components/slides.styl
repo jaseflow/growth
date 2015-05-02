@@ -1,0 +1,33 @@
+@keyframes slideInRight
+    0%
+        opacity: 0
+        transform: translateX(100%)
+    100%
+        opacity: 1
+        transform: translateX(0)
+
+@keyframes slideOutLeft
+    0%
+        opacity: 1
+        transform: translateX(0)
+    100%
+        opacity: 0
+        transform: translateX(-100%)
+        
+.slides
+    position: relative
+    min-height: 400px
+
+.slide
+    opacity: 0
+    transform: translate3d(100%,0,0)
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+
+.slide--active
+    animation: slideInRight 0.25s ease forwards
+
+.slide--done
+    animation: slideOutLeft 0.25s ease forwards
