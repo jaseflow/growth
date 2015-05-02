@@ -73,16 +73,17 @@ var selectAnswer = function(event) {
         slides = document.querySelectorAll('.slide');
 
     event.toElement.classList.add('quiz__option--' + answer);
-    activeAnswer.classList.add(doneClass);
     quizCount++;
     [].forEach.call(slides, function (el) {
         if(!quizCount <= slides.length) {
-            if(el.dataset.order == (quizCount-1)) {
-                el.classList.add(doneClass);
-            }
-            if(el.dataset.order == quizCount) {
-                el.classList.add(activeClass);
-            }
+            setTimeout(function() {
+                if(el.dataset.order == (quizCount-1)) {
+                    el.classList.add(doneClass);
+                }
+                if(el.dataset.order == quizCount) {
+                    el.classList.add(activeClass);
+                }
+            },1000);
         }
     });
 }
