@@ -11,15 +11,24 @@
 .header__container > *
     z-index: 10
 
+.header__nav
+    height: 3.125rem
+    width: 3.125rem
+    line-height: 3.125rem !important
+    padding-left: 0.75rem
+    margin-left: -0.75rem
+    position: relative
+    z-index: 10
+    display: block !important
+
 .header__title
     position: absolute
     top: 0
-    left: 50%
-    margin-left: -6.25rem
-    width: 12.5rem
+    left: 0
+    padding-left: 3.125rem
+    width: 15rem
     height: 100%
     z-index: 1 !important
-    text-align: center
     line-height: $headerHeight
     white-space: nowrap
     overflow: hidden
@@ -28,14 +37,15 @@
 
 .header__action
     position: relative
-    transform: translateX(calc(100%+0.75rem))
+    transform: translateX(calc(50%+0.5rem))
     transition: all 0.25s ease
     -webkit-will-change: transform
     i
         font-size: 1.125rem
+    .btn
+        margin-left: 0.75rem
+        &:first-child
+            margin-left: 0 
 
 .header__action.visible
     transform: translateX(0)
-
-#toggleMode
-    font-size: 1.125rem

@@ -16,7 +16,10 @@ var swapTime = 250;
 var titleModule = 'Safety in the workplace',
     titleUser = 'Jason Corbett';
 
+var pageNumber = 0;
+
 var showCourse = function(event) {
+    pageNumber++;
     event.preventDefault();
     course.classList.add('exit');
     headerBtn.classList.remove('fa-bars');
@@ -31,7 +34,7 @@ var showCourse = function(event) {
 }
 
 var moveBack = function(event) {
-    if(event.target.className == "fa fa-arrow-left") {
+    if(pageNumber == 1) {
         headerBtn.classList.remove('fa-arrow-left');
         headerBtn.classList.add('fa-bars');
         headerAction.classList.remove('visible');
@@ -40,6 +43,7 @@ var moveBack = function(event) {
         course.classList.remove('exit');
         course.removeAttribute('hidden');
         actionsNav.classList.remove('actions__nav--visible');
+        pageNumber--;
     }
 }
 
@@ -59,8 +63,12 @@ var startSong = function(event) {
     playButton.classList.add('fa-pause');
 }
 
-var openActions = function(event) {
+var toggleActions = function(event) {
     actions.classList.toggle('actions--active')
+}
+
+var toggleSearch = function(event) {
+    wrapper.classList.toggle('wrapper--search')
 }
 
 var quizCount = 1;
@@ -74,9 +82,9 @@ var selectAnswer = function(event) {
 
     event.toElement.classList.add('quiz__option--' + answer);
     quizCount++;
-    console.log(quizCount);
     [].forEach.call(slides, function (el) {
-        if(quizCount > slides.length) {
+        console.log(quizCount);
+        if(quizCount >= slides.length) {
             return
         }
         else {
@@ -98,8 +106,19 @@ document.querySelector('.module-content img').addEventListener('click', showOver
 document.querySelector('#overlayClose').addEventListener('click', showOverlay);
 document.querySelector('#toggleMode').addEventListener('click', toggleMode);
 document.querySelector('.playlist__item').addEventListener('click', startSong);
-document.querySelector('.actions__link').addEventListener('click', openActions);
-document.querySelector('.actions__close').addEventListener('click', openActions);
+
+// Multiple selectors on a page
+
+var searchTogglers = document.querySelectorAll('.js-toggleSearch');
+[].forEach.call(searchTogglers, function (el) {
+    el.addEventListener('click', toggleSearch);
+});
+
+var actionTogglers = document.querySelectorAll('.js-toggleActions');
+[].forEach.call(actionTogglers, function (el) {
+    el.addEventListener('click', toggleActions);
+});
+
 var quizOptions = document.querySelectorAll('.quiz__option');
 [].forEach.call(quizOptions, function (el) {
     el.addEventListener('click', selectAnswer);

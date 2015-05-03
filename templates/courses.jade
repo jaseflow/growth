@@ -4,9 +4,10 @@ block title
 block content
     .header
         .header__container.container.container--between.container--align
-            i.fa.fa-bars(style="font-size: 1.125rem")#headerBtn
+            i.header__nav.fa.fa-bars(style="font-size: 1.125rem")#headerBtn
             h3.flat.header__title#title Jason Corbett
             .header__action
+                .btn.btn--bar.fa.fa-search.js-toggleSearch
                 .btn.btn--bar.fa.fa-headphones#toggleMode
     .wrapper#wrapper
         .toolbar
@@ -101,7 +102,7 @@ block content
     .actions#actions
         .actions__hd
             h4.action__title.flat Take a quiz
-            span.actions__close Close
+            span.actions__close.js-toggleActions Close
         .actions__body
             p.reminder
                 strong Remember 
@@ -129,11 +130,17 @@ block content
                             li.quiz__option(data-answer="wrong") Clothes 
                             li.quiz__option(data-answer="wrong") Hands 
                             li.quiz__option(data-answer="right") All of the above 
-                    .slide(data-order="4")
-                        h3 You scored 2/3, not bad!
-                        p Make sure to keep attempting thesethroughout your learning, quizes help you retain your learnings!
+                    .slide(data-order="4").quiz-finished
+                        .quiz__results
+                            h1(style="margin-bottom: 1.5rem") Great job!
+                            .quiz__score 3
+                                span /3
+                        .quiz__actions.centered
+                            a.btn.btn--block Try another quiz
+                            a.js-toggleActions No thanks, back to Learning Guide
+                            
     .actions__nav
-        span.actions__link Take a quiz
+        span.actions__link.js-toggleActions Take a quiz
         span.actions__link Begin assessment
     .overlay#overlay
         .overlay__content

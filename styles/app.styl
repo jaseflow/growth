@@ -3,6 +3,7 @@
 @import 'variables'
 @import 'utility'
 
+@import 'components/animations'
 @import 'components/buttons'
 @import 'components/cards'
 @import 'components/modules'
@@ -165,6 +166,9 @@ a
     will-change: transform
     transition: all 0.25s ease
 
+.wrapper--search
+    transform: translateY($headerHeight)
+
 .text
     .module-content
         display: block
@@ -172,13 +176,16 @@ a
         display: none
 
 .audio
-    transform: translateY(-($toolbarHeight))
     .module-content
         display: none
     .playlist
         display: block
 
 .toolbar
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
     background-color: $darkBlue
     height: $toolbarHeight
     display: flex
