@@ -84,7 +84,7 @@ var selectAnswer = function(event) {
     quizCount++;
     [].forEach.call(slides, function (el) {
         console.log(quizCount);
-        if(quizCount >= slides.length) {
+        if(quizCount > slides.length) {
             return
         }
         else {
